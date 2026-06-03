@@ -3,8 +3,19 @@ const sectionLoader = document.querySelector("#section-loader");
 const tabs = document.querySelectorAll(".tabbar button");
 const entryScreen = document.querySelector("#entry-screen");
 const entryAction = document.querySelector("#entry-action");
+const accountScreen = document.querySelector("#account-screen");
+const accountForm = document.querySelector("#account-form");
+const accountTitle = document.querySelector("#account-title");
+const accountSubmit = document.querySelector("#account-submit");
+const accountRegister = document.querySelector("#account-register");
+const accountForgot = document.querySelector("#account-forgot");
+const accountError = document.querySelector("#account-error");
+const accountUsername = document.querySelector("#account-username");
+const accountPassword = document.querySelector("#account-password");
+const accountAgreement = document.querySelector("#account-agreement");
 
 let screens = [];
+let accountMode = "login";
 
 const screenMap = {
   home: "screen-home",
@@ -93,8 +104,76 @@ function bindInteractions() {
   if (entryScreen && entryAction) {
     entryAction.addEventListener("click", () => {
       entryScreen.classList.add("hidden");
+      if (accountScreen) {
+        accountScreen.classList.remove("hidden");
+      }
     });
   }
+
+  if (accountForm) {
+    accountForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      handleAccountSubmit();
+    });
+  }
+
+  if (accountRegister) {
+    accountRegister.addEventListener("click", () => {
+      accountMode = accountMode === "login" ? "register" : "login";
+      if (accountTitle) accountTitle.textContent = accountMode === "login" ? "Welcome" : "Create";
+      if (accountSubmit) accountSubmit.textContent = accountMode === "login" ? "登录" : "注册";
+      accountRegister.textContent = accountMode === "login" ? "注册账号" : "返回登录";
+      setAccountError("");
+    });
+  }
+
+  if (accountForgot) {
+    accountForgot.addEventListener("click", () => {
+      setAccountError("Demo 暂不支持找回密码，请先使用任意账号体验。");
+    });
+  }
+}
+
+function setAccountError(message) {
+  if (accountError) {
+    accountError.textContent = message;
+  }
+}
+
+function handleAccountSubmit() {
+  const username = accountUsername?.value.trim() || "";
+  const password = accountPassword?.value || "";
+  const agreed = accountAgreement?.checked;
+
+  if (!username) {
+    setAccountError("请输入用户名。");
+    accountUsername?.focus();
+    return;
+  }
+
+  if (password.length < 4) {
+    setAccountError("请输入至少 4 位密码。");
+    accountPassword?.focus();
+    return;
+  }
+
+  if (!agreed) {
+    setAccountError("请先阅读并同意用户协议与隐私政策。");
+    accountAgreement?.focus();
+    return;
+  }
+
+  localStorage.setItem(
+    "lifeFittingRoomDemoUser",
+    JSON.stringify({
+      username,
+      mode: accountMode,
+      loginAt: new Date().toISOString(),
+    })
+  );
+
+  setAccountError("");
+  accountScreen?.classList.add("hidden");
 }
 
 async function init() {

@@ -21,6 +21,52 @@
           <button class="entry-action" type="button" id="entry-action">进入</button>
         </section>
 
+        <section class="account-screen hidden" id="account-screen" aria-label="登录界面">
+          <div class="account-illustration" aria-hidden="true">
+            <div class="account-window">
+              <span class="account-face"></span>
+            </div>
+            <span class="bird bird-left"></span>
+            <span class="bird bird-right"></span>
+            <span class="bird bird-low"></span>
+          </div>
+
+          <form class="account-card" id="account-form">
+            <p class="account-kicker">寻光计划</p>
+            <h2 id="account-title">Welcome</h2>
+
+            <label class="account-field">
+              <span class="account-icon">◎</span>
+              <input type="text" id="account-username" name="username" autocomplete="username" placeholder="请输入用户名" />
+            </label>
+
+            <label class="account-field">
+              <span class="account-icon">⌕</span>
+              <input
+                type="password"
+                id="account-password"
+                name="password"
+                autocomplete="current-password"
+                placeholder="请输入密码"
+              />
+            </label>
+
+            <label class="agreement-row">
+              <input type="checkbox" id="account-agreement" />
+              <span>我已阅读并同意《用户协议》和《隐私政策》</span>
+            </label>
+
+            <p class="account-error" id="account-error" role="status"></p>
+
+            <button class="account-submit" type="submit" id="account-submit">登录</button>
+
+            <div class="account-links">
+              <button type="button" id="account-register">注册账号</button>
+              <button type="button" id="account-forgot">忘记密码</button>
+            </div>
+          </form>
+        </section>
+
         <header class="topbar">
           <div>
             <p class="eyebrow">寻光计划</p>

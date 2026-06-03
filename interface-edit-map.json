@@ -47,6 +47,70 @@
             }
           }
         },
+        "accountScreen": {
+          "label": "登录/注册界面",
+          "file": "index.html",
+          "selector": "#account-screen",
+          "styleReference": "account/1.jpg 和 account/2.jpg",
+          "flow": "点击进入页按钮后显示；登录或注册通过后进入 demo 主界面",
+          "illustration": {
+            "selector": ".account-illustration",
+            "style": "soft illustrated girl, birds, rounded window, green-blue pastel"
+          },
+          "kicker": {
+            "selector": ".account-kicker",
+            "text": "寻光计划"
+          },
+          "title": {
+            "selector": "#account-title",
+            "loginText": "Welcome",
+            "registerText": "Create",
+            "typography": {
+              "fontSize": "38px",
+              "fontWeight": "900",
+              "color": "#557558"
+            }
+          },
+          "usernameField": {
+            "selector": "#account-username",
+            "placeholder": "请输入用户名",
+            "autocomplete": "username"
+          },
+          "passwordField": {
+            "selector": "#account-password",
+            "placeholder": "请输入密码",
+            "autocomplete": "current-password",
+            "minLength": "4"
+          },
+          "agreement": {
+            "selector": "#account-agreement",
+            "text": "我已阅读并同意《用户协议》和《隐私政策》"
+          },
+          "submitButton": {
+            "selector": "#account-submit",
+            "loginText": "登录",
+            "registerText": "注册",
+            "style": "deep green rounded rectangle"
+          },
+          "secondaryActions": {
+            "registerButton": {
+              "selector": "#account-register",
+              "loginModeText": "注册账号",
+              "registerModeText": "返回登录"
+            },
+            "forgotButton": {
+              "selector": "#account-forgot",
+              "text": "忘记密码"
+            }
+          },
+          "validationMessages": {
+            "missingUsername": "请输入用户名。",
+            "shortPassword": "请输入至少 4 位密码。",
+            "missingAgreement": "请先阅读并同意用户协议与隐私政策。",
+            "forgotPassword": "Demo 暂不支持找回密码，请先使用任意账号体验。"
+          },
+          "dataPolicy": "静态 demo 只在当前浏览器 localStorage 保存用户名、登录模式和时间，不上传密码到服务器。"
+        },
         "topbar": {
           "label": "顶部栏",
           "file": "index.html",
@@ -58,6 +122,15 @@
               "fontSize": "12px",
               "fontWeight": "700",
               "color": "var(--cream)"
+            }
+          },
+          "appTitle": {
+            "selector": ".topbar h1",
+            "text": "人生试衣间",
+            "typography": {
+              "fontSize": "22px",
+              "fontWeight": "650",
+              "color": "rgba(250, 250, 241, 0.96)"
             }
           },
           "profileButton": {

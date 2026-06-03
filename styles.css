@@ -143,6 +143,238 @@ button {
   pointer-events: none;
 }
 
+.account-screen {
+  position: absolute;
+  inset: 0;
+  z-index: 19;
+  display: grid;
+  grid-template-rows: 255px 1fr;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 78% 16%, rgba(255, 226, 127, 0.2), transparent 14%),
+    radial-gradient(circle at 18% 23%, rgba(132, 194, 240, 0.22), transparent 18%),
+    linear-gradient(180deg, #bdd7c0 0%, #dce6d7 38%, #f8fbf5 39%, #f8fbf5 100%);
+  transition: opacity 520ms ease, visibility 520ms ease, transform 520ms ease;
+}
+
+.account-screen.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(10px);
+}
+
+.account-illustration {
+  position: relative;
+  display: grid;
+  place-items: end center;
+  padding-top: 26px;
+}
+
+.account-window {
+  position: relative;
+  width: 178px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 60px 60px 20px 20px;
+  background: #5b795c;
+  box-shadow:
+    -42px 36px 0 -18px rgba(238, 245, 223, 0.6),
+    42px 36px 0 -18px rgba(238, 245, 223, 0.6);
+}
+
+.account-face {
+  position: absolute;
+  left: 50%;
+  bottom: -3px;
+  width: 92px;
+  height: 106px;
+  transform: translateX(-50%);
+  border-radius: 44px 44px 30px 30px;
+  background:
+    radial-gradient(circle at 34% 44%, #3e342d 0 2px, transparent 3px),
+    radial-gradient(circle at 66% 44%, #3e342d 0 2px, transparent 3px),
+    radial-gradient(circle at 34% 58%, rgba(239, 120, 102, 0.42) 0 7px, transparent 8px),
+    radial-gradient(circle at 66% 58%, rgba(239, 120, 102, 0.42) 0 7px, transparent 8px),
+    linear-gradient(180deg, #d7aa68 0 28%, #ffe3bd 29% 62%, #d9442f 63% 100%);
+}
+
+.account-face::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 48px;
+  height: 28px;
+  transform: translate(-50%, -16px);
+  border-radius: 50% 50% 45% 45%;
+  background: #e73f2e;
+  box-shadow:
+    -22px 7px 0 -7px #e73f2e,
+    22px 7px 0 -7px #e73f2e;
+}
+
+.bird {
+  position: absolute;
+  width: 42px;
+  height: 24px;
+  border-radius: 70% 25% 60% 35%;
+  background: #f4d23c;
+  transform: rotate(-16deg);
+  filter: drop-shadow(0 7px 14px rgba(67, 94, 78, 0.12));
+}
+
+.bird::after {
+  content: "";
+  position: absolute;
+  right: -9px;
+  top: 9px;
+  border: 5px solid transparent;
+  border-left-color: #425445;
+}
+
+.bird-left {
+  left: 38px;
+  top: 126px;
+  width: 34px;
+  height: 20px;
+  background: #db4a2f;
+}
+
+.bird-right {
+  right: 38px;
+  top: 84px;
+}
+
+.bird-low {
+  right: 22px;
+  bottom: -18px;
+  width: 54px;
+  height: 30px;
+  background: #6da7cf;
+  transform: rotate(-18deg) scaleX(1.08);
+}
+
+.account-card {
+  position: relative;
+  display: grid;
+  align-content: start;
+  gap: 14px;
+  min-height: 100%;
+  padding: 36px 30px 32px;
+  border-radius: 48px 48px 0 0;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(252, 253, 248, 0.98)),
+    #fff;
+  color: #45634a;
+}
+
+.account-kicker {
+  margin-bottom: -6px;
+  color: rgba(69, 99, 74, 0.68);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-align: center;
+}
+
+.account-card h2 {
+  margin-bottom: 18px;
+  color: #557558;
+  font-size: 38px;
+  font-weight: 900;
+  line-height: 1;
+  text-align: center;
+}
+
+.account-field {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  align-items: center;
+  min-height: 58px;
+  padding: 0 17px;
+  border: 1px solid rgba(100, 132, 104, 0.08);
+  border-radius: 18px;
+  background: #c4dcb9;
+}
+
+.account-icon {
+  color: #59745d;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.account-field input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  color: #435d47;
+  background: transparent;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.account-field input::placeholder {
+  color: rgba(255, 255, 255, 0.74);
+  font-weight: 700;
+}
+
+.agreement-row {
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  align-items: start;
+  gap: 10px;
+  margin-top: 4px;
+  color: #526a56;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.agreement-row input {
+  width: 18px;
+  height: 18px;
+  margin: 1px 0 0;
+  accent-color: #557558;
+}
+
+.account-error {
+  min-height: 18px;
+  margin: -4px 0 0;
+  color: #bd513f;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.account-submit {
+  min-height: 62px;
+  margin-top: 8px;
+  border: 0;
+  border-radius: 18px;
+  color: rgba(255, 255, 255, 0.96);
+  background: #5f7d61;
+  box-shadow: 0 18px 34px rgba(62, 91, 66, 0.18);
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.account-links {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0 12px;
+}
+
+.account-links button {
+  border: 0;
+  color: #557558;
+  background: transparent;
+  font-size: 16px;
+  font-weight: 800;
+}
+
 .topbar {
   position: sticky;
   top: 0;
