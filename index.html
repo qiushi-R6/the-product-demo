@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>人生试衣间 | 产品 Demo</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="sections/today/today.css" />
+    <link rel="stylesheet" href="sections/assessment/assessment.css" />
+    <link rel="stylesheet" href="sections/experience/experience.css" />
+    <link rel="stylesheet" href="sections/community/community.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="phone" aria-label="人生试衣间 App demo">
+        <section class="entry-screen" id="entry-screen" aria-label="产品进入界面">
+          <img
+            src="Enter/output/night-stars-philosophy-elegant-text.png"
+            alt="星空树影与人生哲理文字"
+          />
+          <button class="entry-action" type="button" id="entry-action">进入</button>
+        </section>
+
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">寻光计划</p>
+            <h1>人生试衣间</h1>
+          </div>
+          <button class="icon-btn" type="button" aria-label="打开个人档案">◎</button>
+        </header>
+
+        <div class="section-loader" id="section-loader" aria-live="polite">加载中</div>
+        <div
+          class="section-mounts"
+          id="section-mounts"
+          data-sections="sections/today/index.html sections/assessment/index.html sections/experience/index.html sections/community/index.html"
+        ></div>
+
+        <nav class="tabbar" aria-label="主导航">
+          <button class="active" type="button" data-go="home"><span>⌂</span>今日</button>
+          <button type="button" data-go="coach"><span>◌</span>探索</button>
+          <button type="button" data-go="experiences"><span>▦</span>体验</button>
+          <button type="button" data-go="community"><span>◇</span>个人</button>
+        </nav>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+.assessment-screen {
+  --section-accent: #c8a8ff;
+  --section-accent-soft: rgba(200, 168, 255, 0.16);
+}
+
+.assessment-screen .coach-head h2,
+.assessment-screen .profile-hero h2,
+.assessment-screen .report-card h2 {
+  letter-spacing: 0;
+}
+
+.assessment-screen .chat p {
+  border-radius: 20px;
+}
+
+.assessment-screen .bot {
+  border-color: rgba(200, 168, 255, 0.18);
+}
+
+.assessment-screen .user,
+.assessment-screen .chip.active {
+  background: var(--section-accent-soft);
+}
+
+.assessment-screen .quiz label {
+  gap: 10px;
+}
+
+.assessment-screen select {
+  border-color: rgba(200, 168, 255, 0.18);
+}
+
+.assessment-profile-screen .radar-core {
+  box-shadow: 0 0 52px rgba(200, 168, 255, 0.22);
+}
+
+.assessment-report-screen .report-card {
+  border-color: rgba(200, 168, 255, 0.18);
+}

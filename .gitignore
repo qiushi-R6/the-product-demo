@@ -1,0 +1,16 @@
+# Local server logs
+server.out.log
+server.err.log
+
+# Generated deployment archives / staging folders
+deploy_package_*/
+the_product_demo_deploy_*.zip
+
+# Platform-local caches
+.netlify/
+.vercel/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.vscode/

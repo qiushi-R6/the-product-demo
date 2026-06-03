@@ -1,0 +1,33 @@
+.experience-screen {
+  --section-accent: #9cc9ff;
+  --section-accent-soft: rgba(156, 201, 255, 0.16);
+}
+
+.experience-screen .section-title h2 {
+  letter-spacing: 0;
+}
+
+.experience-screen .filters button.active,
+.experience-screen .detail-stats span {
+  background: var(--section-accent-soft);
+}
+
+.experience-screen .list-item {
+  border-color: rgba(156, 201, 255, 0.16);
+}
+
+.experience-screen .list-item span {
+  color: #d8ecff;
+}
+
+.experience-screen .thumb {
+  box-shadow: 0 0 22px rgba(156, 201, 255, 0.1);
+}
+
+.experience-detail-screen .timeline {
+  border-color: rgba(156, 201, 255, 0.18);
+}
+
+.experience-detail-screen .note-card {
+  border-color: rgba(156, 201, 255, 0.16);
+}

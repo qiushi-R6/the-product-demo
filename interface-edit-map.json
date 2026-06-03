@@ -1,0 +1,404 @@
+{
+  "usage": "这是给你编辑界面细节用的参数文件。你可以修改 text、position、typography、button、card、image 等字段；修改完后告诉 Codex，我会依据这里的内容同步到对应 HTML/CSS。",
+  "rules": [
+    "只改引号里的文字或数值，尽量不要删除字段名。",
+    "position 可写 left/top/right/bottom/align/margin/padding 等描述。",
+    "typography 可写 fontSize/fontWeight/lineHeight/letterSpacing/color。",
+    "button 可写 text/border/background/color/radius/shadow/size/target。",
+    "image 可写 src/fit/position/padding/height。",
+    "如果不确定具体 CSS 数值，可以写自然语言，例如：往上移动一点、按钮更轻、更高级。"
+  ],
+  "interfaces": {
+    "today": {
+      "name": "今日",
+      "files": {
+        "appShellHtml": "index.html",
+        "sectionHtml": "sections/today/index.html",
+        "globalCss": "styles.css",
+        "sectionCss": "sections/today/today.css"
+      },
+      "scopeClass": ".today-screen",
+      "sharedVisibleElements": {
+        "pageTitle": {
+          "label": "浏览器标题",
+          "file": "index.html",
+          "selector": "title",
+          "text": "人生试衣间 | 产品 Demo"
+        },
+        "entryScreen": {
+          "label": "产品进入界面",
+          "file": "index.html",
+          "selector": "#entry-screen",
+          "image": {
+            "selector": "#entry-screen img",
+            "src": "Enter/output/night-stars-philosophy-elegant-text.png",
+            "alt": "星空树影与人生哲理文字",
+            "fit": "cover",
+            "position": "center center"
+          },
+          "button": {
+            "selector": "#entry-action",
+            "text": "进入",
+            "style": {
+              "shape": "gold translucent capsule",
+              "width": "min(260px, 100%)",
+              "height": "54px",
+              "letterSpacing": "0.24em"
+            }
+          }
+        },
+        "topbar": {
+          "label": "顶部栏",
+          "file": "index.html",
+          "selector": ".topbar",
+          "brandEyebrow": {
+            "selector": ".topbar .eyebrow",
+            "text": "寻光计划",
+            "typography": {
+              "fontSize": "12px",
+              "fontWeight": "700",
+              "color": "var(--cream)"
+            }
+          },
+          "profileButton": {
+            "selector": ".topbar .icon-btn",
+            "text": "◎",
+            "ariaLabel": "打开个人档案",
+            "style": {
+              "shape": "circle",
+              "size": "40px",
+              "border": "1px solid rgba(248, 245, 229, 0.18)",
+              "background": "rgba(248, 245, 229, 0.12)"
+            }
+          }
+        },
+        "bottomNavigation": {
+          "label": "底部主导航",
+          "file": "index.html",
+          "selector": ".tabbar",
+          "items": [
+            {
+              "key": "home",
+              "target": "home",
+              "icon": "⌂",
+              "text": "今日",
+              "active": true
+            },
+            {
+              "key": "coach",
+              "target": "coach",
+              "icon": "◌",
+              "text": "探索",
+              "active": false
+            },
+            {
+              "key": "experiences",
+              "target": "experiences",
+              "icon": "▦",
+              "text": "体验",
+              "active": false
+            },
+            {
+              "key": "community",
+              "target": "community",
+              "icon": "◇",
+              "text": "个人",
+              "active": false
+            }
+          ],
+          "style": {
+            "shape": "rounded glass bar",
+            "background": "rgba(58, 67, 72, 0.54)",
+            "activeBackground": "rgba(244, 237, 216, 0.18)"
+          }
+        },
+        "sectionLoader": {
+          "label": "模块加载提示",
+          "file": "index.html",
+          "selector": "#section-loader",
+          "text": "加载中",
+          "errorText": "界面加载失败，请通过本地服务器打开页面。"
+        }
+      },
+      "modules": {
+        "heroCard": {
+          "label": "今日顶部图片卡片",
+          "file": "sections/today/index.html",
+          "selector": ".today-screen .hero",
+          "image": {
+            "selector": ".today-screen .hero img",
+            "src": "assets/hero-exploration.png",
+            "alt": "青年探索不同职业和兴趣的场景",
+            "fit": "contain",
+            "position": "center bottom",
+            "padding": "54px 10px 8px",
+            "note": "用于控制图片是否完整展示人物、是否裁切、在卡片中的位置。"
+          },
+          "text": {
+            "selector": ".today-screen .hero-copy h2",
+            "content": "人生万般可能。",
+            "position": {
+              "top": "18px",
+              "left": "20px",
+              "right": "20px",
+              "align": "left"
+            },
+            "typography": {
+              "fontSize": "18px",
+              "fontWeight": "520",
+              "lineHeight": "1.42",
+              "letterSpacing": "0.02em",
+              "color": "rgba(255, 255, 248, 0.94)"
+            }
+          },
+          "card": {
+            "height": "300px",
+            "radius": "8px",
+            "border": "1px solid rgba(248, 245, 229, 0.14)",
+            "background": "blue-gray soft gradient",
+            "overlay": "top dark soft overlay"
+          }
+        },
+        "dailyQuestion": {
+          "label": "今日探索问题卡片",
+          "file": "sections/today/index.html",
+          "selector": ".today-screen .today",
+          "kicker": {
+            "selector": ".today-screen .today .section-kicker",
+            "text": "今日探索问题",
+            "typography": {
+              "fontSize": "12px",
+              "fontWeight": "700",
+              "color": "var(--cream)"
+            }
+          },
+          "question": {
+            "selector": ".today-screen .today h3",
+            "text": "什么事情会让你忘记“应该”，只想继续做下去？",
+            "typography": {
+              "fontSize": "18px",
+              "fontWeight": "default",
+              "lineHeight": "1.35"
+            }
+          },
+          "button": {
+            "selector": ".today-screen .today .primary",
+            "text": "开始测评",
+            "target": "coach",
+            "style": "soft translucent capsule"
+          },
+          "position": {
+            "marginTop": "14px",
+            "padding": "16px",
+            "layout": "vertical grid",
+            "gap": "14px"
+          },
+          "card": {
+            "border": "rgba(243, 212, 143, 0.2)",
+            "background": "global frosted panel"
+          }
+        },
+        "keywordRow": {
+          "label": "关键词标签行",
+          "file": "sections/today/index.html",
+          "selector": ".today-screen .keyword-row",
+          "items": [
+            {
+              "text": "创造表达"
+            },
+            {
+              "text": "真实连接"
+            },
+            {
+              "text": "动手实践"
+            }
+          ],
+          "style": {
+            "shape": "capsule",
+            "background": "soft gold translucent",
+            "gap": "8px",
+            "margin": "14px 0"
+          }
+        },
+        "recommendedExperienceHeader": {
+          "label": "推荐体验标题行",
+          "file": "sections/today/index.html",
+          "selector": ".today-screen .section-title:has(+ .experience-card)",
+          "title": {
+            "selector": ".today-screen .section-title:has(+ .experience-card) h3",
+            "text": "推荐体验",
+            "typography": {
+              "fontSize": "18px",
+              "lineHeight": "1.35"
+            }
+          },
+          "button": {
+            "selector": ".today-screen .section-title:has(+ .experience-card) .text-btn",
+            "text": "查看全部",
+            "target": "experiences",
+            "style": {
+              "shape": "gold outlined transparent capsule",
+              "minHeight": "34px",
+              "padding": "7px 13px",
+              "border": "1px solid rgba(255, 231, 166, 0.36)",
+              "color": "rgba(255, 235, 184, 0.96)"
+            }
+          }
+        },
+        "recommendedExperienceCard": {
+          "label": "推荐体验卡片",
+          "file": "sections/today/index.html",
+          "selector": ".today-screen .experience-card",
+          "target": "experience-detail",
+          "image": {
+            "selector": ".today-screen .experience-card .card-media",
+            "className": "coffee",
+            "height": "164px",
+            "backgroundImage": "assets/hero-exploration.png"
+          },
+          "badge": {
+            "selector": ".today-screen .experience-card .badge",
+            "text": "半日人生试衣卡"
+          },
+          "title": {
+            "selector": ".today-screen .experience-card h4",
+            "text": "咖啡店运营观察员",
+            "typography": {
+              "fontSize": "18px",
+              "fontWeight": "520",
+              "letterSpacing": "0.02em"
+            }
+          },
+          "description": {
+            "selector": ".today-screen .experience-card .card-body > p:not(.badge)",
+            "text": "3 小时进入独立咖啡店后场，观察服务、选品、内容运营与真实客流。",
+            "typography": {
+              "fontSize": "13px",
+              "lineHeight": "1.5"
+            }
+          },
+          "meta": {
+            "selector": ".today-screen .experience-card .meta",
+            "leftText": "价值匹配 91%",
+            "rightText": "¥79"
+          },
+          "card": {
+            "border": "very light warm border",
+            "background": "frosted glass",
+            "bodyPadding": "16px 15px 15px"
+          }
+        },
+        "microPlan": {
+          "label": "7 日价值感微实验入口",
+          "file": "sections/today/index.html",
+          "selector": ".today-screen .micro-plan",
+          "kicker": {
+            "selector": ".today-screen .micro-plan .section-kicker",
+            "text": "7 日价值感微实验"
+          },
+          "title": {
+            "selector": ".today-screen .micro-plan h4",
+            "text": "第 2 天：采访一位真实从业者"
+          },
+          "button": {
+            "selector": ".today-screen .micro-plan .secondary",
+            "text": "继续",
+            "target": "plan",
+            "style": "soft translucent capsule"
+          },
+          "layout": {
+            "display": "flex",
+            "alignItems": "center",
+            "justifyContent": "space-between",
+            "gap": "12px"
+          }
+        },
+        "planScreen": {
+          "label": "7 日微实验详情页",
+          "file": "sections/today/index.html",
+          "selector": ".today-plan-screen",
+          "header": {
+            "title": {
+              "selector": ".today-plan-screen .section-title h2",
+              "text": "7 日微实验"
+            },
+            "button": {
+              "selector": ".today-plan-screen .section-title .text-btn",
+              "text": "今日",
+              "target": "home"
+            }
+          },
+          "days": [
+            {
+              "number": "1",
+              "text": "完成寻光测评",
+              "state": "done"
+            },
+            {
+              "number": "2",
+              "text": "采访真实从业者",
+              "state": "active-day"
+            },
+            {
+              "number": "3",
+              "text": "观看虚拟预体验",
+              "state": "default"
+            },
+            {
+              "number": "4",
+              "text": "参与线下体验",
+              "state": "default"
+            },
+            {
+              "number": "5",
+              "text": "填写复盘问卷",
+              "state": "default"
+            },
+            {
+              "number": "6",
+              "text": "社群分享",
+              "state": "default"
+            },
+            {
+              "number": "7",
+              "text": "生成下一步路径",
+              "state": "default"
+            }
+          ]
+        }
+      }
+    },
+    "assessment": {
+      "name": "测评",
+      "html": "sections/assessment/index.html",
+      "css": "sections/assessment/assessment.css",
+      "scopeClass": ".assessment-screen",
+      "modules": {
+        "coachIntro": "寻光教练标题、聊天气泡、测评表单",
+        "profile": "探索画像、价值感雷达、洞察卡片",
+        "report": "AI 复盘报告、分数、人生叙事档案"
+      }
+    },
+    "experience": {
+      "name": "体验",
+      "html": "sections/experience/index.html",
+      "css": "sections/experience/experience.css",
+      "scopeClass": ".experience-screen",
+      "modules": {
+        "projectList": "体验项目库、筛选按钮、项目列表",
+        "projectDetail": "体验详情、流程、体验前观察任务"
+      }
+    },
+    "community": {
+      "name": "小组",
+      "html": "sections/community/index.html",
+      "css": "sections/community/community.css",
+      "scopeClass": ".community-screen",
+      "modules": {
+        "room": "同频小组房间信息",
+        "posts": "提问与导师留言",
+        "returnButton": "回到今日探索按钮"
+      }
+    }
+  }
+}

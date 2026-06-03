@@ -1,0 +1,105 @@
+.today-screen {
+  --section-accent: #f3d48f;
+  --section-accent-soft: rgba(243, 212, 143, 0.18);
+}
+
+.today-screen .hero {
+  height: 300px;
+  display: grid;
+  background:
+    linear-gradient(180deg, rgba(65, 79, 88, 0.72), rgba(228, 226, 207, 0.86));
+}
+
+.today-screen .hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  padding: 54px 10px 8px;
+}
+
+.today-screen .hero::after {
+  background:
+    linear-gradient(180deg, rgba(22, 31, 40, 0.56) 0%, rgba(22, 31, 40, 0.18) 34%, rgba(22, 31, 40, 0.08) 100%);
+}
+
+.today-screen .hero-copy {
+  top: 18px;
+  left: 20px;
+  right: 20px;
+  text-align: left;
+}
+
+.today-screen .hero-copy h2 {
+  max-width: 270px;
+  margin-inline: 0;
+  font-size: 18px;
+  font-weight: 520;
+  line-height: 1.42;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 248, 0.94);
+}
+
+.today-screen .today {
+  border-color: rgba(243, 212, 143, 0.2);
+}
+
+.today-screen .primary,
+.today-screen .secondary {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    0 0 26px rgba(243, 212, 143, 0.12);
+}
+
+.today-screen .keyword-row span,
+.today-screen .days span {
+  background: var(--section-accent-soft);
+}
+
+.today-screen .experience-card {
+  border-color: rgba(255, 244, 210, 0.12);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 248, 0.105), rgba(255, 255, 248, 0.055)),
+    rgba(12, 21, 34, 0.18);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 18px 42px rgba(7, 12, 20, 0.12);
+  backdrop-filter: blur(22px) saturate(1.08);
+}
+
+.today-screen .experience-card .card-media {
+  min-height: 164px;
+}
+
+.today-screen .experience-card .card-body {
+  padding: 16px 15px 15px;
+}
+
+.today-screen .experience-card h4 {
+  font-size: 18px;
+  font-weight: 520;
+  letter-spacing: 0.02em;
+}
+
+.today-screen .experience-card .badge {
+  color: rgba(255, 235, 180, 0.92);
+  background: rgba(255, 231, 166, 0.08);
+  border-color: rgba(255, 231, 166, 0.2);
+}
+
+.today-screen .section-title:has(+ .experience-card) .text-btn {
+  min-height: 34px;
+  padding: 7px 13px;
+  border: 1px solid rgba(255, 231, 166, 0.36);
+  border-radius: 999px;
+  color: rgba(255, 235, 184, 0.96);
+  background: rgba(255, 231, 166, 0.055);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    0 0 20px rgba(255, 220, 140, 0.08);
+  backdrop-filter: blur(14px);
+}
+
+.today-plan-screen .days p {
+  min-height: 56px;
+}

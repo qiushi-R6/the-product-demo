@@ -1,0 +1,100 @@
+<section class="screen assessment-screen" id="screen-coach">
+  <div class="coach-head">
+    <p class="section-kicker">寻光教练</p>
+    <h2>我不会替你决定方向，只帮你把问题问清楚。</h2>
+  </div>
+
+  <div class="chat">
+    <p class="bot">最近让你反复想起、但一直没真正尝试的事情是什么？</p>
+    <p class="user">我想试试咖啡、摄影，也想知道自己是否适合做内容。</p>
+    <p class="bot">那我们先验证三个维度：你从哪里获得能量、你愿意承受什么成本、你想服务谁。</p>
+  </div>
+
+  <form class="quiz" id="quiz-form">
+    <label>
+      <span>体验中你最想验证</span>
+      <select name="goal">
+        <option>我是否真的喜欢这件事</option>
+        <option>它能不能发展成职业方向</option>
+        <option>它是否能带来真实连接</option>
+      </select>
+    </label>
+    <label>
+      <span>你更容易被什么点亮</span>
+      <div class="chips">
+        <button type="button" class="chip active">创造作品</button>
+        <button type="button" class="chip">帮助他人</button>
+        <button type="button" class="chip">身体行动</button>
+        <button type="button" class="chip">安静观察</button>
+      </div>
+    </label>
+    <label>
+      <span>本周可投入时间</span>
+      <input type="range" min="1" max="7" value="3" id="time-range" />
+      <small><span id="time-output">3</span> 天微实验</small>
+    </label>
+    <button class="primary full" type="submit">生成探索画像</button>
+  </form>
+</section>
+
+<section class="screen assessment-screen assessment-profile-screen" id="screen-profile">
+  <div class="profile-hero">
+    <p class="section-kicker">探索画像</p>
+    <h2>创造表达型 · 社会连接型</h2>
+    <p>你更容易在“有作品产出、能被他人看见、又保留一定自主度”的场景里获得价值感。</p>
+  </div>
+
+  <div class="radar">
+    <div class="radar-core">价值感<br />雷达</div>
+    <span style="--x: 50%; --y: 5%">兴趣 92</span>
+    <span style="--x: 82%; --y: 34%">能力 76</span>
+    <span style="--x: 74%; --y: 82%">价值 88</span>
+    <span style="--x: 18%; --y: 76%">风险 31</span>
+    <span style="--x: 8%; --y: 32%">门槛 42</span>
+  </div>
+
+  <div class="insight-grid">
+    <article>
+      <p>能量来源</p>
+      <strong>表达、现场反馈、可见成果</strong>
+    </article>
+    <article>
+      <p>优先尝试</p>
+      <strong>咖啡运营、摄影记录、播客制作</strong>
+    </article>
+    <article>
+      <p>暂缓方向</p>
+      <strong>高重复、低互动、纯执行任务</strong>
+    </article>
+  </div>
+
+  <button class="primary full" type="button" data-go="experience-detail">查看匹配体验</button>
+</section>
+
+<section class="screen assessment-screen assessment-report-screen" id="screen-report">
+  <div class="report-card">
+    <p class="section-kicker">AI 复盘报告</p>
+    <h2>你的价值感来自“表达被真实回应”。</h2>
+    <p>你在内容选题和与顾客交流时能量最高，在长时间重复清洁和等待时明显下降。</p>
+  </div>
+
+  <div class="score-row">
+    <div><strong>91%</strong><span>兴趣匹配</span></div>
+    <div><strong>78%</strong><span>行动可行</span></div>
+    <div><strong>24%</strong><span>消耗风险</span></div>
+  </div>
+
+  <div class="archive">
+    <h3>人生叙事档案</h3>
+    <p>体验前：想验证“咖啡是不是一种自由职业”。</p>
+    <p>体验后：更喜欢“内容和人”的部分，而不是店务本身。</p>
+  </div>
+
+  <article class="micro-plan">
+    <div>
+      <p class="section-kicker">下一步微行动</p>
+      <h4>3 天内采访一位咖啡店主，问 5 个真实问题。</h4>
+    </div>
+    <button class="secondary" type="button" data-go="community">加入小组</button>
+  </article>
+</section>
