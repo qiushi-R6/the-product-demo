@@ -67,6 +67,69 @@
           </form>
         </section>
 
+        <section class="persona-screen hidden" id="persona-screen" aria-label="用户画像问答界面">
+          <div class="persona-orbit persona-orbit-one" aria-hidden="true"></div>
+          <div class="persona-orbit persona-orbit-two" aria-hidden="true"></div>
+
+          <div class="persona-quiz" id="persona-quiz">
+            <div class="persona-quiz-head">
+              <button class="persona-round" type="button" id="persona-back" aria-label="返回上一题">‹</button>
+              <div>
+                <p class="persona-kicker">人生体验画像</p>
+                <h2 id="persona-title">找到下一段人生体验</h2>
+              </div>
+              <span class="persona-step-count" id="persona-step-count">1 / 6</span>
+            </div>
+
+            <div class="persona-progress" aria-hidden="true">
+              <span id="persona-progress-bar"></span>
+            </div>
+
+            <div class="persona-hero-card" id="persona-hero-card">
+              <div class="persona-illustration" aria-hidden="true">
+                <span class="persona-sun"></span>
+                <span class="persona-moon"></span>
+                <span class="persona-path"></span>
+                <span class="persona-person"></span>
+              </div>
+              <div>
+                <p id="persona-section">开始之前</p>
+                <strong id="persona-question">这不是测试你是谁，而是帮你找到下一段人生体验。</strong>
+              </div>
+            </div>
+
+            <div class="persona-options" id="persona-options"></div>
+
+            <div class="persona-actions">
+              <button class="persona-secondary" type="button" id="persona-skip">稍后再测</button>
+              <button class="persona-primary" type="button" id="persona-next">开始</button>
+            </div>
+
+            <p class="persona-ethics">本画像仅用于体验推荐与自我探索，不构成心理诊断或职业结论。</p>
+          </div>
+
+          <div class="persona-result hidden" id="persona-result">
+            <div class="persona-result-art">
+              <img
+                id="persona-result-image"
+                src="User_Profile/Reference/a.jpg"
+                alt="职业人物画像拼贴"
+              />
+            </div>
+            <p class="persona-kicker">阶段性画像</p>
+            <h2 id="persona-result-title">慢热修复者</h2>
+            <p id="persona-result-copy">建议先从舒适模式开始，选择手作、自然、低社交的体验项目。</p>
+            <div class="persona-meter-list" id="persona-meter-list"></div>
+            <div class="persona-mode-card">
+              <span>推荐模式</span>
+              <strong id="persona-mode-title">舒适模式</strong>
+              <p id="persona-mode-copy">先恢复能量，再慢慢探索新的生活样本。</p>
+            </div>
+            <button class="persona-primary" type="button" id="persona-finish">进入我的体验推荐</button>
+            <p class="persona-ethics">你可以随时重新测评或删除数据，画像不会作为职业结论。</p>
+          </div>
+        </section>
+
         <header class="topbar">
           <div>
             <p class="eyebrow">寻光计划</p>

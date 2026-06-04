@@ -1,27 +1,160 @@
 .community-screen {
-  --section-accent: #b6f3cf;
-  --section-accent-soft: rgba(182, 243, 207, 0.14);
+  --person-ink: #31362f;
+  --person-muted: #7a8078;
+  --person-line: rgba(80, 86, 74, 0.12);
+  --person-card: rgba(255, 255, 252, 0.8);
+  --person-green: #c6e3c4;
+  --person-yellow: #ffe49a;
+  --person-lilac: #dcd3f7;
+  --person-peach: #f6b58b;
+  --person-shadow: 0 16px 38px rgba(72, 76, 61, 0.14);
+  isolation: isolate;
+  padding: 20px 18px 110px;
+  color: var(--person-ink);
+  background:
+    radial-gradient(circle at 16% 10%, rgba(198, 227, 196, 0.42), transparent 25%),
+    radial-gradient(circle at 86% 15%, rgba(255, 228, 154, 0.36), transparent 24%),
+    radial-gradient(circle at 78% 58%, rgba(220, 211, 247, 0.34), transparent 28%),
+    linear-gradient(180deg, #f4f2e5 0%, #eef6ec 48%, #f8efdf 100%);
+}
+
+.community-screen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.34;
+  background-image:
+    linear-gradient(rgba(62, 76, 63, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(62, 76, 63, 0.04) 1px, transparent 1px);
+  background-size: 14px 14px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.58), transparent 76%);
+}
+
+.phone:has(#screen-community.active) {
+  background:
+    radial-gradient(circle at 18% 10%, rgba(198, 227, 196, 0.3), transparent 24%),
+    radial-gradient(circle at 83% 18%, rgba(255, 228, 154, 0.28), transparent 25%),
+    linear-gradient(180deg, #f4f1e4 0%, #edf6eb 48%, #f8efdf 100%);
+}
+
+.phone:has(#screen-community.active) .tabbar {
+  border-color: rgba(255, 255, 255, 0.46);
+  background: rgba(52, 58, 51, 0.78);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    0 18px 44px rgba(36, 45, 36, 0.3);
+}
+
+.phone:has(#screen-community.active) .tabbar .active {
+  color: #fffdf1;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.11)),
+    rgba(198, 227, 196, 0.3);
+}
+
+.community-screen .section-title {
+  margin-top: 4px;
 }
 
 .community-screen .section-title h2 {
+  color: var(--person-ink);
+  font-size: 25px;
+  font-weight: 820;
   letter-spacing: 0;
+}
+
+.community-screen .text-btn {
+  min-height: 34px;
+  padding: 7px 13px;
+  border: 1px solid rgba(80, 86, 74, 0.12);
+  border-radius: 999px;
+  color: #62705e;
+  background: rgba(255, 255, 255, 0.62);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
 }
 
 .community-screen .room,
 .community-screen .post {
-  border-color: rgba(182, 243, 207, 0.16);
+  border: 1px solid var(--person-line);
+  border-radius: 28px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.66)),
+    var(--person-card);
+  box-shadow: var(--person-shadow);
+  backdrop-filter: blur(22px) saturate(1.05);
+}
+
+.community-screen .room {
+  position: relative;
+  overflow: hidden;
+  margin-top: 16px;
+  padding: 19px;
+}
+
+.community-screen .room::after {
+  content: "";
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  width: 58px;
+  height: 58px;
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 38% 38%, #ffe49a 0 15%, transparent 16%),
+    radial-gradient(circle at 68% 62%, #f6b58b 0 14%, transparent 15%),
+    rgba(255, 255, 255, 0.52);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
 }
 
 .community-screen .active-room {
-  background: var(--section-accent-soft);
+  border-color: rgba(198, 227, 196, 0.56);
+  background:
+    radial-gradient(circle at 85% 20%, rgba(255, 228, 154, 0.5), transparent 22%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(229, 244, 226, 0.82));
 }
 
+.community-screen .room h3,
 .community-screen .post strong {
-  color: rgba(255, 255, 248, 0.94);
+  position: relative;
+  z-index: 1;
+  color: var(--person-ink);
+  font-weight: 820;
+}
+
+.community-screen .room p,
+.community-screen .post p {
+  position: relative;
+  z-index: 1;
+  color: var(--person-muted);
+  line-height: 1.6;
+}
+
+.community-screen .post {
+  margin-top: 14px;
+  padding: 17px;
+}
+
+.community-screen .post:nth-of-type(2) {
+  background:
+    radial-gradient(circle at 88% 18%, rgba(220, 211, 247, 0.44), transparent 18%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.66));
+}
+
+.community-screen .post:nth-of-type(3) {
+  background:
+    radial-gradient(circle at 88% 18%, rgba(255, 228, 154, 0.42), transparent 18%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.66));
 }
 
 .community-screen .primary {
+  min-height: 46px;
+  margin-top: 16px;
+  color: #31362f;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  background:
+    linear-gradient(135deg, rgba(255, 228, 154, 0.98), rgba(198, 227, 196, 0.9));
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.18),
-    0 0 28px rgba(182, 243, 207, 0.12);
+    inset 0 1px 0 rgba(255, 255, 255, 0.56),
+    0 12px 24px rgba(93, 126, 76, 0.17);
 }

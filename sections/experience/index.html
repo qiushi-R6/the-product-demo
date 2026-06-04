@@ -3,13 +3,17 @@
     <h2>体验项目库</h2>
     <button class="text-btn" type="button" data-go="home">今日</button>
   </div>
-  <div class="filters">
-    <button class="active">职业体验</button>
-    <button>兴趣创造</button>
-    <button>公益贡献</button>
-    <button>自然生活</button>
+  <div class="filters" data-experience-filters>
+    <button class="active" type="button" data-category="career">职业体验</button>
+    <button type="button" data-category="creative">兴趣创造</button>
+    <button type="button" data-category="public-good">公益贡献</button>
+    <button type="button" data-category="nature">自然生活</button>
   </div>
-  <div class="list">
+  <div class="experience-category-note" aria-live="polite">
+    <strong>职业体验</strong>
+    <p>进入真实职业现场，观察任务、节奏和人与人的互动方式。</p>
+  </div>
+  <div class="list" data-experience-list>
     <article class="list-item" data-go="experience-detail">
       <div class="thumb coffee"></div>
       <div>
